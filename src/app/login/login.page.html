@@ -1,0 +1,112 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="content">
+    <ion-avatar>
+      <img alt="Logo" src="../../assets/icon//logo.png" />
+    </ion-avatar>
+    <div>
+      <h1>Banco Terceirão</h1>
+    </div>
+  </div>
+
+  <div class="button-container">
+    <ion-button expand="block" id="log-in">Entrar</ion-button>
+    <ion-button expand="block" fill="outline" id="sign-in"
+      >Registrar</ion-button
+    >
+  </div>
+
+  <ion-modal
+    #login
+    trigger="log-in"
+    [initialBreakpoint]="1"
+    [breakpoints]="[0, 1]"
+  >
+    <ng-template>
+      <ion-content class="ion-padding">
+        <ion-toolbar>
+          <ion-title>Entrar</ion-title>
+          <ion-buttons slot="end">
+            <ion-button color="danger" (click)="login.dismiss()">
+              <ion-icon name="close"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+
+        <form (submit)="onSubmit();login.dismiss()" [formGroup]="formLogin">
+          <div class="form-content">
+            <ion-input
+              label="E-mail"
+              name="email"
+              [(ngModel)]="creds.email"
+              formControlName="email"
+              labelPlacement="floating"
+              fill="outline"
+              type="email"
+              placeholder="Digite seu email"
+            ></ion-input>
+            <ion-input
+              label="Senha"
+              name="password"
+              labelPlacement="floating"
+              fill="outline"
+              type="password"
+              placeholder="Digite sua senha"
+              [(ngModel)]="creds.password"
+              formControlName="password"
+            ></ion-input>
+          </div>
+          <div class="form-buttons">
+            <ion-button type="submit" expand="block">Entrar</ion-button>
+          </div>
+        </form>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal
+    #signin
+    trigger="sign-in"
+    [initialBreakpoint]="1"
+    [breakpoints]="[0, 1]"
+  >
+    <ng-template>
+      <ion-content class="ion-padding">
+        <ion-toolbar>
+          <ion-title>Registrar</ion-title>
+          <ion-buttons slot="end">
+            <ion-button color="danger" (click)="signin.dismiss()">
+              <ion-icon name="close"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+
+        <form (submit)="onRegister();signin.dismiss()" [formGroup]="formLogin">
+          <div class="form-content">
+            <ion-input
+              label="E-mail"
+              labelPlacement="floating"
+              fill="outline"
+              type="email"
+              placeholder="Digite seu email"
+              name="email"
+              [(ngModel)]="creds.email"
+              formControlName="email"
+            ></ion-input>
+            <ion-input
+              label="Senha"
+              labelPlacement="floating"
+              fill="outline"
+              type="password"
+              placeholder="Digite sua senha"
+              [(ngModel)]="creds.password"
+              formControlName="password"
+            ></ion-input>
+          </div>
+          <div class="form-buttons">
+            <ion-button type="submit" expand="block">Registrar</ion-button>
+          </div>
+        </form>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

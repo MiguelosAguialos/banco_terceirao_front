@@ -1,0 +1,60 @@
+h1 {
+  font-size: 2em;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+ion-content .content {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+ion-avatar {
+  width: 80%;
+  height: 80%;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  ion-input {
+    margin-top: 10px;
+    padding: 10px;
+  }
+}
+
+ion-segment-button {
+  font-size: 10px;
+}
+
+ion-segment {
+  overflow: hidden;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row-reverse;
+  position: absolute;
+  width: calc(100% - 32px);
+  bottom: 10%;
+  ion-button {
+    width: 50%;
+  }
+}
+
+.form-buttons {
+  ion-button {
+    width: 100%;
+  }
+  display: flex;
+  flex-direction: row-reverse;
+  position: absolute;
+  width: calc(100% - 32px);
+  bottom: 10%;
+}

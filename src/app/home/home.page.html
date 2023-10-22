@@ -1,20 +1,129 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> Banco Terceirão </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" scroll-y="true" id="container">
+  <div class="bg"></div>
+  <div class="bg1"></div>
+  <div class="card">
+    <img class="card-bg-icon" alt="" src="../../assets/card_bg.svg" />
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div class="current-balance">Saldo atual</div>
+    <div class="div" ngDefaultControl [(ngModel)]="userInfo.money">
+      ${{userInfo.money}}
+    </div>
+    <div class="div1">XXXX XXXX XXXX XXXX</div>
+    <div class="div2">05/2025</div>
+  </div>
+
+  <div class="last-transactions">
+    <div style="width: 100%; display: flex; justify-content: center">
+      <ion-card
+        style="
+          display: grid;
+          width: 80px;
+          justify-content: center;
+          align-items: center;
+          border: 0;
+          margin: 10px;
+        "
+        (click)="openModalPix()"
+      >
+        <img
+          alt="Silhouette of mountains"
+          src="../../assets/icon/logo pix.png"
+          style="
+            width: 26px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+          "
+        />
+        <ion-card-header>
+          <ion-card-title style="text-align: center; font-size: 20px"
+            >Pix</ion-card-title
+          >
+        </ion-card-header>
+      </ion-card>
+
+      <ion-card
+        style="
+          display: grid;
+          width: 80px;
+          justify-content: center;
+          align-items: center;
+          border: 0;
+          margin: 10px;
+        "
+        (click)="openModalExtrato()"
+      >
+        <img
+          alt="Silhouette of mountains"
+          src="../../assets/icon/logo extrato.png"
+          style="
+            width: 26px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+          "
+        />
+        <ion-card-header>
+          <ion-card-title style="text-align: center; font-size: 20px"
+            >Extrato</ion-card-title
+          >
+        </ion-card-header>
+      </ion-card>
+
+      <ion-card
+        style="
+          display: grid;
+          width: 80px;
+          justify-content: center;
+          align-items: center;
+          border: 0;
+          margin: 10px;
+        "
+        (click)="logout()"
+      >
+        <img
+          alt="Silhouette of mountains"
+          src="../../assets/icon/logo saida.png"
+          style="
+            width: 26px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+          "
+        />
+        <ion-card-header>
+          <ion-card-title style="text-align: center; font-size: 20px"
+            >Sair</ion-card-title
+          >
+        </ion-card-header>
+      </ion-card>
+    </div>
+    <div class="last-transactions1">Produtos disponíveis</div>
+    <ion-list style="width: 100%">
+      <ion-item
+        *ngFor="let produto of listaProdutos"
+        class="group-parent"
+        lines="none"
+      >
+        <div class="shopping-parent">
+          <div class="shopping">{{produto.nome}}</div>
+          <div class="tue-12052021">{{produto.chave}}</div>
+        </div>
+        <div class="div3">${{produto.preco}}</div>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div class="user">
+    <img class="avatar-icon" alt="" src="../../assets/avatar.svg" />
+
+    <div class="good-morning">Bem vindo!</div>
+    <div class="andrea">{{userInfo.name}}</div>
   </div>
 </ion-content>

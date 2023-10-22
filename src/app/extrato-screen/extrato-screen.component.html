@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button class="backbutton" (click)="goBack()">Voltar</ion-button>
+    </ion-buttons>
+    <ion-title>Extrato</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card color="light" *ngFor="let produto of produtos">
+    <ion-card-header>
+      <ion-card-title>{{ produto.product.nome }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div style="display: flex; justify-content: space-between">
+        <span>{{ produto.product.chave }}</span>
+        <span>${{ produto.product.preco }}</span>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

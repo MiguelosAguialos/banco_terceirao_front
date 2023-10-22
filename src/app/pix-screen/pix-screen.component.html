@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button class="backbutton" (click)="goBack()">Voltar</ion-button>
+    </ion-buttons>
+    <ion-title>Carrinho</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100%;
+    "
+  >
+    <ion-item class="chavepix" fill="solid">
+      <ion-label style="font-size: 20px">Chave Pix: </ion-label>
+      <ion-input
+        [(ngModel)]="chavepix"
+        placeholder="999-999"
+        type="number"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-button class="pixbutton" (click)="pagar()"
+      >Realizar transferência</ion-button
+    >
+  </div>
+</ion-content>
